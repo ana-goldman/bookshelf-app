@@ -42,7 +42,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      <h1 className="text-2xl font-bold">📚 BookShelf</h1>
+      <main className="p-6">
+        <Outlet />
+      </main>
+    </div>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
