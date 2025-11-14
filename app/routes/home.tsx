@@ -11,9 +11,9 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <>
+    <div className="flex flex-col md:flex-row gap-20">
       <SearchPanel />
       <Bookshelf />
-    </>
+    </div>
   );
 }

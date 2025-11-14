@@ -1,12 +1,9 @@
-import { BookCard } from "~/entities/book/ui/BookCard";
+import { BookCardHorizontal } from "~/entities/book/ui/BookCardHorizontal";
 
 export function ShelfSection() {
   return (
-    <div>
-      {/* Here will be some books */}
-      <BookCard />
-      <BookCard />
-      <BookCard />
+    <div className="mb-8">
+      <BookCardHorizontal />
     </div>
   );
 }
