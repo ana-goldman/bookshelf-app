@@ -5,4 +5,13 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+  server: {
+    proxy: {
+      "/openlibrary": {
+        target: "https://openlibrary.org",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/openlibrary/, "")
+      }
+    }
+  }
 });
