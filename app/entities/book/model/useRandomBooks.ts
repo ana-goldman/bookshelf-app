@@ -1,17 +1,6 @@
 import { useEffect, useState } from "react";
 import { getRandomBooks } from "../api/getRandomBooks";
-
-export type Book = {
-    key: string,
-    title: string,
-    cover_id: string,
-    authors: [
-        {
-          key: string,
-          name: string
-        }
-    ]
-}
+import type { Book } from "./types";
 
 export function useRandomBooks(): { data: Book[] | null; loading: boolean; error: any } {
     const [data, setData] = useState<Book[] | null>(null);
