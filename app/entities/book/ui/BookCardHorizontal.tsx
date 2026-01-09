@@ -1,4 +1,6 @@
-export function BookCardHorizontal() {
+import type { BookshelfItem } from "~/entities/bookshelf/model/types";
+
+export function BookCardHorizontal({ book }: { book: BookshelfItem }) {
   return (
     <div
       className="
@@ -14,16 +16,26 @@ export function BookCardHorizontal() {
             flex items-center justify-center overflow-hidden
           "
         >
-          <span className="text-gray-400 text-md">No Cover</span>
+          {book.coverId ? (
+            <img
+              src={`https://covers.openlibrary.org/b/id/${book.coverId}-M.jpg`}
+              alt={book.title}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <span className="text-gray-400 text-md">No Cover</span>
+          )}
         </div>
       </div>
 
       <div className="flex flex-col justify-between flex-1 min-w-0">
         <h3 className="font-semibold text-3xl text-gray-900 leading-snug line-clamp-2">
-          Title
+          {book.title}
         </h3>
 
-        <p className="text-2xl text-gray-500 mt-1 line-clamp-1">Author</p>
+        <p className="text-2xl text-gray-500 mt-1 line-clamp-1">
+          {book.author}
+        </p>
 
         <div className="absolute bottom-4 right-4">
           <button className="col-span-1 text-lg text-gray-500 bg-gray-100 rounded-lg px-4 py-2">

@@ -9,17 +9,6 @@ export async function fetchBookshelf() {
   return res.json();
 }
 
-// export async function addBook(book: Book & { shelf: Shelf }) {
-//   const res = await fetch(BASE_URL, {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify(book),
-//   });
-
-//   if (!res.ok) throw new Error("Failed to add book");
-//   return res.json();
-// }
-
 // export async function removeBook(id: number) {
 //   const res = await fetch(`${BASE_URL}/${id}`, {
 //     method: "DELETE",
@@ -34,6 +23,7 @@ export async function addToShelf(item: BookshelfItem) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(item),
   });
+  if (!res.ok) throw new Error("Failed to add book");
   return res.json();
 }
 
