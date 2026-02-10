@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import type { Shelf } from "~/entities/bookshelf/model/types";
+import { useClickOutside } from "~/shared/lib/useClickOutside";
 
 export function BookCardVertical({
   cover,
@@ -14,17 +15,7 @@ export function BookCardVertical({
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  useClickOutside(ref, () => setOpen(false));
 
   const selectShelf = (shelf: Shelf) => {
     onAddToShelf?.(shelf);

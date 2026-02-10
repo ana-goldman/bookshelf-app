@@ -8,3 +8,10 @@ export interface BookshelfItem {
   coverId?: number;
   shelf: Shelf;
 }
+
+export type BookshelfContextValue = {
+  books: BookshelfItem[];
+  loading: boolean;
+  addBook: (book: any, shelf: Shelf) => Promise<void>;
+  moveBook: (id: string, shelf: Shelf) => Promise<void>;
+};

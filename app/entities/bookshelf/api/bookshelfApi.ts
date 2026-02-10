@@ -27,7 +27,7 @@ export async function addToShelf(item: BookshelfItem) {
   return res.json();
 }
 
-export async function updateShelf(id: number, shelf: Shelf) {
+export async function updateShelf(id: string, shelf: Shelf) {
   return fetch(`${BASE_URL}/${id}`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },

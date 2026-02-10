@@ -9,19 +9,35 @@
       "shelf": "want"
     },
     {
-      "id": "1L2yL4",
-      "key": "/works/OL24283286W",
-      "title": "A Long way from home",
-      "author": "Elizabeth Baguley",
-      "coverId": 10782745,
-      "shelf": "reading"
-    },
-    {
       "id": "OrIMOr",
       "key": "/works/OL8224817W",
       "title": "Rabbits",
       "author": "Virginia Richardson",
       "coverId": 397373,
+      "shelf": "read"
+    },
+    {
+      "id": "PocF1l",
+      "key": "/works/OL24426062W",
+      "title": "Die Sternenkinder",
+      "author": "Rolf Fänger",
+      "coverId": 3271424,
+      "shelf": "read"
+    },
+    {
+      "id": "T6DFwc",
+      "key": "/works/OL7130059W",
+      "title": "Ectoparasites of the cottontail rabbit in Lee County, northern Illinois",
+      "author": "Lewis J. Stannard",
+      "coverId": 6020914,
+      "shelf": "want"
+    },
+    {
+      "id": "IDoqAL",
+      "key": "/works/OL11708854W",
+      "title": "Lu Yu \"Cha jing\"",
+      "author": "Qikun Cheng",
+      "coverId": 5329829,
       "shelf": "reading"
     }
   ]

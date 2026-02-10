@@ -1,6 +1,6 @@
-import { useBookshelf } from "~/entities/bookshelf/model/useBookshelf";
 import { ShelfSection } from "./ShelfSection";
 import type { Shelf } from "~/entities/bookshelf/model/types";
+import { useBookshelfContext } from "~/entities/bookshelf/model/BookshelfContext";
 
 export function ShelfTabs() {
   const shelves = ["Currently Reading", "Finished", "Wishlist"];
@@ -10,7 +10,7 @@ export function ShelfTabs() {
     Wishlist: "want",
   };
 
-  const { books } = useBookshelf();
+  const { books } = useBookshelfContext();
 
   console.log(books);
 

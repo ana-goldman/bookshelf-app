@@ -1,6 +1,7 @@
 import { Bookshelf } from "~/widgets/bookshelf";
 import type { Route } from "./+types/home";
 import { SidePanel } from "~/widgets/side-panel";
+import { BookshelfProvider } from "~/entities/bookshelf/model/BookshelfProvider";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -12,8 +13,10 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <div className="flex flex-col md:flex-row gap-20">
-      <SidePanel />
-      <Bookshelf />
+      <BookshelfProvider>
+        <SidePanel />
+        <Bookshelf />
+      </BookshelfProvider>
     </div>
   );
 }

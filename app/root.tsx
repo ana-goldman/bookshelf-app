@@ -45,7 +45,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 px-20 py-10">
       <h1 className="text-6xl font-medium text-gray-700">BookShelf</h1>
-      <main className="py-15">
+      <main className="pt-15">
         <Outlet />
       </main>
     </div>
