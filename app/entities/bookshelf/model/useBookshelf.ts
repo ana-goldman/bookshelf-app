@@ -35,12 +35,15 @@ export function useBookshelf() {
   };
 
   const moveBook = async (id: string, shelf: Shelf) => {
+    const previousBooks = books; // snapshot for rollback
+
     setBooks((prev) => prev.map((b) => (b.id === id ? { ...b, shelf } : b)));
 
     try {
       await updateShelf(id, shelf);
-    } catch {
-      fetchBookshelf().then(setBooks);
+    } catch (error) {
+      setBooks(previousBooks);
+      throw error;
     }
   };
 
