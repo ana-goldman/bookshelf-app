@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
+import { SHELF_LABEL } from "~/entities/bookshelf/model/shelfConfig";
 import type { Shelf } from "~/entities/bookshelf/model/types";
 import { useClickOutside } from "~/shared/lib/useClickOutside";
+import { Dropdown } from "~/shared/ui/Dropdown";
 
 export function BookCardVertical({
   cover,
@@ -40,28 +42,14 @@ export function BookCardVertical({
           +
         </button>
 
-        {/* Dropdown */}
         {open && (
-          <div className="absolute bottom-12 right-2 z-30 bg-white rounded-md shadow-md overflow-hidden text-sm">
-            <button
-              className="block w-full px-3 py-2 hover:bg-gray-100 text-left"
-              onClick={() => selectShelf("want")}
-            >
-              Add to wishlist
-            </button>
-            <button
-              className="block w-full px-3 py-2 hover:bg-gray-100 text-left"
-              onClick={() => selectShelf("reading")}
-            >
-              Currently reading
-            </button>
-            <button
-              className="block w-full px-3 py-2 hover:bg-gray-100 text-left"
-              onClick={() => selectShelf("read")}
-            >
-              Mark as read
-            </button>
-          </div>
+          <Dropdown
+            className="bottom-12 right-2 rounded-md shadow-md overflow-hidden text-sm"
+            items={(["want", "reading", "read"] as Shelf[]).map((shelf) => ({
+              label: `Add to ${SHELF_LABEL[shelf]}`,
+              onClick: () => selectShelf(shelf),
+            }))}
+          />
         )}
       </div>
 

@@ -6,6 +6,7 @@ import {
 } from "~/entities/bookshelf/model/shelfConfig";
 import type { BookshelfItem, Shelf } from "~/entities/bookshelf/model/types";
 import { useClickOutside } from "~/shared/lib/useClickOutside";
+import { Dropdown } from "~/shared/ui/Dropdown";
 
 export function BookCardHorizontal({ book }: { book: BookshelfItem }) {
   const [open, setOpen] = useState(false);
@@ -64,23 +65,18 @@ export function BookCardHorizontal({ book }: { book: BookshelfItem }) {
             Move
           </button>
 
-          {/* Dropdown */}
           {open && (
-            <div className="absolute right-0 top-12 z-30 bg-white rounded-lg shadow-lg border-none w-44">
-              {SHELF_TRANSITIONS[book.shelf].map((shelf) => (
-                <button
-                  key={shelf}
-                  className="w-full px-4 py-2 text-left text-sm hover:bg-gray-100 "
-                  onClick={() => selectShelf(shelf)}
-                >
-                  Move to {SHELF_LABEL[shelf]}
-                </button>
-              ))}
-            </div>
+            <Dropdown
+              className="right-0 top-12 rounded-lg shadow-lg border-none w-44 "
+              items={SHELF_TRANSITIONS[book.shelf].map((shelf) => ({
+                label: `Move to ${SHELF_LABEL[shelf]}`,
+                onClick: () => selectShelf(shelf),
+              }))}
+            />
           )}
 
           <button className="col-span-1 text-lg text-gray-500 bg-gray-100 rounded-lg px-4 py-2 cursor-pointer">
-            To all
+            See all
           </button>
         </div>
       </div>
