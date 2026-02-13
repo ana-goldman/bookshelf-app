@@ -3,6 +3,7 @@ import { addToShelf, fetchBookshelf, updateShelf } from "../api/bookshelfApi";
 import type { BookshelfItem, Shelf } from "./types";
 import { nanoid } from "nanoid";
 import type { Book } from "~/entities/book/model/types";
+import toast from "react-hot-toast";
 
 export function useBookshelf() {
   const [books, setBooks] = useState<BookshelfItem[]>([]);
@@ -28,8 +29,10 @@ export function useBookshelf() {
 
     try {
       await addToShelf(newItem);
+      toast.success("Book added successfully!");
     } catch (error) {
       console.error("Failed to add book:", error);
+      toast.error("Failed to add book. Please try again.");
       setBooks((prev) => prev.filter((item) => item.id !== newItem.id));
     }
   };
@@ -41,8 +44,10 @@ export function useBookshelf() {
 
     try {
       await updateShelf(id, shelf);
+      toast.success("Book moved successfully!");
     } catch (error) {
       setBooks(previousBooks);
+      toast.error("Failed to move book. Please try again.");
       throw error;
     }
   };

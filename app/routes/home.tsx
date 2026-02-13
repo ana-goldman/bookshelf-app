@@ -2,6 +2,7 @@ import { Bookshelf } from "~/widgets/bookshelf";
 import type { Route } from "./+types/home";
 import { SidePanel } from "~/widgets/side-panel";
 import { BookshelfProvider } from "~/entities/bookshelf/model/BookshelfProvider";
+import { Toaster } from "react-hot-toast";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -17,6 +18,7 @@ export default function Home() {
         <SidePanel />
         <Bookshelf />
       </BookshelfProvider>
+      <Toaster position="top-right" />
     </div>
   );
 }
