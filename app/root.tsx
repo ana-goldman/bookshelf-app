@@ -9,6 +9,7 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import { BookshelfProvider } from "./entities/bookshelf/model/BookshelfProvider";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -44,10 +45,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 px-20 py-10">
-      <h1 className="text-6xl font-medium text-gray-700">BookShelf</h1>
-      <main className="pt-15">
-        <Outlet />
-      </main>
+      <BookshelfProvider>
+        <h1 className="text-6xl font-medium text-gray-700">BookShelf</h1>
+        <main className="pt-15">
+          <Outlet />
+        </main>
+      </BookshelfProvider>
     </div>
   );
 }

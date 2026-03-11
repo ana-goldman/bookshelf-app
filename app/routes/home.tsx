@@ -1,23 +1,21 @@
 import { Bookshelf } from "~/widgets/bookshelf";
 import type { Route } from "./+types/home";
 import { SidePanel } from "~/widgets/side-panel";
-import { BookshelfProvider } from "~/entities/bookshelf/model/BookshelfProvider";
 import { Toaster } from "react-hot-toast";
+import { text } from "stream/consumers";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Bookshelf App" },
+    { name: "description", content: "Welcome to your Bookshelf App!" },
   ];
 }
 
 export default function Home() {
   return (
     <div className="flex flex-col md:flex-row gap-20">
-      <BookshelfProvider>
-        <SidePanel />
-        <Bookshelf />
-      </BookshelfProvider>
+      <SidePanel />
+      <Bookshelf />
       <Toaster position="top-right" />
     </div>
   );

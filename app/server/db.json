@@ -47,6 +47,46 @@
       "author": "Lewis Carroll",
       "coverId": 10527843,
       "shelf": "want"
+    },
+    {
+      "id": "jCTGIv",
+      "key": "/works/OL29607W",
+      "title": "The earth",
+      "author": "Edward J. Tarbuck",
+      "coverId": 85210,
+      "shelf": "want"
+    },
+    {
+      "id": "onxag1",
+      "key": "/works/OL19100524W",
+      "title": "Ethique et technique",
+      "author": "Université libre de Bruxelles",
+      "coverId": 13012937,
+      "shelf": "want"
+    },
+    {
+      "id": "Nf9Etu",
+      "key": "/works/OL19503945W",
+      "title": "TRANSFORMING NURSING THROUGH REFLECTIVE PRACTICE; ED. BY CHRISTOPHER JOHNS",
+      "author": "Christopher Johns",
+      "coverId": 9879755,
+      "shelf": "want"
+    },
+    {
+      "id": "qO34yJ",
+      "key": "/works/OL5274703W",
+      "title": "The philosopher's dictionary",
+      "author": "Robert M. Martin",
+      "coverId": 770452,
+      "shelf": "want"
+    },
+    {
+      "id": "FL_FQp",
+      "key": "/works/OL8122260W",
+      "title": "The Babysitting Wars (Candy Apple #6)",
+      "author": "Mimi McCoy",
+      "coverId": 6380423,
+      "shelf": "read"
     }
   ]
 }

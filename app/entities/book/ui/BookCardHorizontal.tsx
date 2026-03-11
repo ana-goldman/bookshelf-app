@@ -7,10 +7,13 @@ import {
 import type { BookshelfItem, Shelf } from "~/entities/bookshelf/model/types";
 import { useClickOutside } from "~/shared/lib/useClickOutside";
 import { Dropdown } from "~/shared/ui/Dropdown";
+import { getCoverUrl } from "../api/getCoverUrl";
+import { useNavigate } from "react-router";
 
 export function BookCardHorizontal({ book }: { book: BookshelfItem }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   const { moveBook } = useBookshelfContext();
   useClickOutside(ref, () => setOpen(false));
@@ -38,7 +41,7 @@ export function BookCardHorizontal({ book }: { book: BookshelfItem }) {
         >
           {book.coverId ? (
             <img
-              src={`https://covers.openlibrary.org/b/id/${book.coverId}-M.jpg`}
+              src={getCoverUrl("id", book.coverId)}
               alt={book.title}
               className="w-full h-full object-cover"
             />
@@ -75,7 +78,10 @@ export function BookCardHorizontal({ book }: { book: BookshelfItem }) {
             />
           )}
 
-          <button className="col-span-1 text-lg text-gray-500 bg-gray-100 rounded-lg px-4 py-2 cursor-pointer">
+          <button
+            className="col-span-1 text-lg text-gray-500 bg-gray-100 rounded-lg px-4 py-2 cursor-pointer"
+            onClick={() => navigate(`/shelf/${book.shelf}`)}
+          >
             See all
           </button>
         </div>

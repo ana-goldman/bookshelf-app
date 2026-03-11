@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { SHELF_LABEL } from "~/entities/bookshelf/model/shelfConfig";
 import type { Shelf } from "~/entities/bookshelf/model/types";
 import { useClickOutside } from "~/shared/lib/useClickOutside";
