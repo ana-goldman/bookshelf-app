@@ -3,11 +3,12 @@ import type { Book } from "~/entities/book/model/types";
 import { useRandomBooks } from "~/entities/book/model/useRandomBooks";
 import { BookCardVertical } from "~/entities/book/ui/BookCardVertical";
 import { useBookshelfContext } from "~/entities/bookshelf/model/BookshelfContext";
+import { AiRecommendationPanel } from "~/features/recommendation/ui/AiRecommendationPanel";
 import SearchBar from "~/features/search/ui/SearchBar";
 
 export function SidePanel() {
   const { data, loading, error } = useRandomBooks();
-  const { addBook } = useBookshelfContext();
+  const { addBook, books } = useBookshelfContext();
 
   return (
     <div className="md:basis-1/2 w-full">
@@ -23,9 +24,10 @@ export function SidePanel() {
               author={book.authors?.[0]?.name || "Unknown Author"}
               onAddToShelf={(shelf) => addBook(book, shelf)}
             />
-          ))}
+        ))}
         {error && <p className="text-xl">Error loading books.</p>}
       </div>
+      <AiRecommendationPanel books={books} />
     </div>
   );
 }

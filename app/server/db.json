@@ -87,6 +87,15 @@
       "author": "Mimi McCoy",
       "coverId": 6380423,
       "shelf": "read"
+    },
+    {
+      "id": "ZDNUlnSNorQ",
+      "key": "/works/OL138052W",
+      "title": "Alice's Adventures in Wonderland",
+      "author": "Lewis Carroll",
+      "coverId": 10527843,
+      "shelf": "read"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

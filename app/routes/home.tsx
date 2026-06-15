@@ -2,7 +2,6 @@ import { Bookshelf } from "~/widgets/bookshelf";
 import type { Route } from "./+types/home";
 import { SidePanel } from "~/widgets/side-panel";
 import { Toaster } from "react-hot-toast";
-import { text } from "stream/consumers";
 
 export function meta({}: Route.MetaArgs) {
   return [
